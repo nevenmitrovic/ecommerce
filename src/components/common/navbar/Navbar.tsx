@@ -10,14 +10,14 @@ const Navbar = () => {
           <NavLink to="/">FABLE</NavLink>
         </div>
         <div>
-          <ul>
+          <ul className="navbar-list">
             <li>CATALOG</li>
             <li className="mobile-hidden">ABOUT US</li>
             <li className="mobile-hidden">CONTACT</li>
           </ul>
         </div>
         <div>
-          <ul>
+          <ul className="navbar-list">
             <li>
               <NavLink to="#">CART</NavLink>
             </li>

@@ -4,7 +4,7 @@ nav {
   align-items: center;
 }
 
-ul {
+.navbar-list {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -30,13 +30,13 @@ ul {
     letter-spacing: 2rem;
   }
 
-  ul {
+  .navbar-list {
     padding: 28px 60px;
     gap: 2rem;
   }
 
-  li:hover,
-  li:focus {
+  .navbar-list li:hover,
+  .navbar-list li:focus {
     cursor: pointer;
     font-weight: 800;
     color: var(--clr-light-gray-500);
