@@ -1,0 +1,48 @@
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+ul {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 52px 20px 20px 20px;
+  gap: 1rem;
+}
+
+.logo {
+  display: none;
+}
+
+.mobile-hidden {
+  display: none;
+}
+
+@media (width > 768px) {
+  .logo {
+    display: block;
+    padding: 28px 60px;
+    max-width: 292px;
+    max-height: 73px;
+    font-weight: 800;
+    letter-spacing: 2rem;
+  }
+
+  ul {
+    padding: 28px 60px;
+    gap: 2rem;
+  }
+
+  li:hover,
+  li:focus {
+    cursor: pointer;
+    font-weight: 800;
+    color: var(--clr-light-gray-500);
+  }
+
+  .mobile-hidden {
+    display: block;
+  }
+}

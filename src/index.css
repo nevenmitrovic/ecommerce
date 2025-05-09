@@ -28,9 +28,11 @@
   }
 
   /* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
-  ul[role="list"],
-  ol[role="list"] {
+  ul,
+  ol {
     list-style: none;
+    margin: 0;
+    padding: 0;
   }
 
   /* Set core body defaults */
@@ -100,14 +102,14 @@
     --clr-border: #262626;
     --clr-indigo: #9faed9;
     --clr-bolotny: #56aa91;
-    --clr-light-gray: #707070;
+    --clr-light-gray-500: #707070;
     --clr-brown: #743821;
     --clr-ochre: #c89607;
     --clr-dark-green: #214133;
     --clr-white: #ffffff;
     --clr-red: #ff4b41;
     --clr-light-green: #00ab26;
-    --clr-light-gray: #f1f1ef;
+    --clr-light-gray-400: #f1f1ef;
 
     --fs-300: 0.875rem;
     --fs-400: 1rem;
@@ -137,4 +139,20 @@
   body {
     color: var(--clr-secondary);
   }
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  text-decoration: none;
+}
+
+a {
+  color: inherit;
+}
+
+a:hover,
+a:focus {
+  color: var(--clr-light-gray-500);
 }
