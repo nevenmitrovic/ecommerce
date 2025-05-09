@@ -1,0 +1,10 @@
+footer {
+  background-color: var(--clr-primary);
+  color: var(--clr-white);
+}
+
+.footer-sections-container {
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+}

@@ -1,0 +1,13 @@
+.footer-section {
+  padding: 36px 20px;
+}
+
+.footer-section ul {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.footer-section ul li a {
+  font-size: 13px;
+}

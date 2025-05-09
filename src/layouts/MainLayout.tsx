@@ -1,4 +1,5 @@
 import Navbar from "@/components/common/navbar/Navbar";
+import Footer from "@/components/common/footer/Footer";
 
 const MainLayout = ({ children }: any) => {
   return (
@@ -7,9 +8,7 @@ const MainLayout = ({ children }: any) => {
 
       <main>{children}</main>
 
-      <footer>
-        <p>&copy; 2023 My Website</p>
-      </footer>
+      <Footer />
     </>
   );
 };
