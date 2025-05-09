@@ -1,0 +1,16 @@
+.subscribe-form {
+  display: none;
+}
+
+@media (width > 768px) {
+  .subscribe-form {
+    padding: 36px 0;
+    display: flex;
+    align-items: start;
+    gap: 16px;
+  }
+
+  .subscribe-form button {
+    margin-top: 26.3px;
+  }
+}

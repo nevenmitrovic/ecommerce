@@ -8,3 +8,16 @@ footer {
   align-items: start;
   justify-content: space-between;
 }
+
+@media (width > 768px) {
+  footer {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 60px;
+  }
+  .footer-sections-container {
+    max-width: 662px;
+    justify-content: start;
+    gap: 121px;
+  }
+}

@@ -1,0 +1,34 @@
+/* DESKTOP UI DESIGN */
+.button {
+  max-width: 315px;
+  padding: 12px 24px;
+  font-size: 20px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.main-button {
+  background-color: var(--clr-white);
+  color: var(--clr-secondary);
+  border: 1px solid var(--clr-secondary);
+}
+
+.order-button {
+  background-color: var(--clr-gray);
+  color: var(--clr-white);
+  border: none;
+}
+
+.order-button:hover,
+.order-button:focus {
+  background-color: var(--clr-white);
+  color: var(--clr-secondary);
+  border: 1px solid var(--clr-secondary);
+}
+
+.main-button:hover,
+.main-button:focus {
+  background-color: var(--clr-secondary);
+  color: var(--clr-white);
+  border: 1px solid var(--clr-white);
+}

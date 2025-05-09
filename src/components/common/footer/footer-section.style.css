@@ -11,3 +11,13 @@
 .footer-section ul li a {
   font-size: 13px;
 }
+
+@media (width > 768px) {
+  .footer-section {
+    padding: 36px 0;
+  }
+  .footer-section li:hover,
+  .footer-section li:focus {
+    font-weight: 800;
+  }
+}
