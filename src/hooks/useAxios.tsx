@@ -2,11 +2,14 @@ import { useState } from "react";
 
 import axiosInstance from "@/services/apiClient";
 
+import type { IGetAllCategoriesResponse } from "@/services/productsService";
+
 type fetchMethod = "GET" | "POST" | "PUT" | "DELETE";
+type useAxiosData = null | IGetAllCategoriesResponse;
 
 export const useAxios = () => {
   const [loading, setLoading] = useState(false);
-  const [data, setData] = useState(null);
+  const [data, setData] = useState<useAxiosData>(null);
 
   const fetchData = async (url: string, method: fetchMethod, body?: any) => {
     setLoading(true);
@@ -17,6 +20,8 @@ export const useAxios = () => {
         data: body,
       });
       setData(response.data);
+    } catch (error) {
+      setData(null);
     } finally {
       setLoading(false);
     }
