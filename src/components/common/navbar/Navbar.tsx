@@ -1,8 +1,15 @@
 import "./navbar.style.css";
 
 import { NavLink } from "react-router";
+import { useState } from "react";
+
+import Catalog from "@/components/catalog/Catalog";
 
 const Navbar = () => {
+  const [showCatalog, setShowCatalog] = useState(true);
+
+  const toggleShowCatalog = () => setShowCatalog(!showCatalog);
+
   return (
     <header>
       <nav>
@@ -11,7 +18,7 @@ const Navbar = () => {
         </div>
         <div>
           <ul className="navbar-list">
-            <li>CATALOG</li>
+            <li onClick={toggleShowCatalog}>CATALOG</li>
             <li className="mobile-hidden">ABOUT US</li>
             <li className="mobile-hidden">CONTACT</li>
           </ul>
@@ -27,6 +34,8 @@ const Navbar = () => {
           </ul>
         </div>
       </nav>
+
+      <Catalog show={showCatalog} />
     </header>
   );
 };
