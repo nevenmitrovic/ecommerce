@@ -1,7 +1,8 @@
 .catalog-container {
   width: 100vw;
   height: 100vh;
-  position: fixed;
+  position: absolute;
+  z-index: 1000;
   background-color: var(--clr-white);
   gap: 38px;
 }
