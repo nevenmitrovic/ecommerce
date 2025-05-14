@@ -35,10 +35,12 @@
 @media (width > 768px) {
   .catalog-container {
     height: 80vh;
+    width: 100%;
     background-color: var(--clr-white);
     gap: 20px;
-    padding: 84px 15% 0 15%;
+    padding: 84px 10% 0 10%;
     justify-content: space-evenly;
+    overflow-x: hidden;
   }
   .catalog-section {
     padding: 0;
