@@ -1,0 +1,23 @@
+.hero-title {
+  text-align: center;
+  margin-top: 103px;
+  padding: 12px 20px;
+}
+.hero-title h1 {
+  font-weight: 800;
+  letter-spacing: 2rem;
+  margin-right: -2rem;
+  text-align: center;
+  margin-bottom: 28px;
+}
+.hero-title p {
+  font-size: 18px;
+  color: var(--clr-gray);
+}
+.hero-img {
+  height: 464px;
+  background-image: url("@/assets/images/hero.jpg");
+  background-size: 300%;
+  background-position: center;
+  background-repeat: no-repeat;
+}

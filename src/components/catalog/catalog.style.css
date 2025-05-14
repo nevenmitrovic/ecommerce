@@ -7,6 +7,7 @@
 }
 .catalog-section {
   padding: 20px;
+  overflow-y: auto;
 }
 .catalog-section h3 {
   font-size: 20px;
@@ -19,17 +20,27 @@
   gap: 8px;
 }
 
+.catalog-section::-webkit-scrollbar {
+  width: 6px;
+}
+.catalog-section::-webkit-scrollbar-thumb {
+  background-color: transparent;
+  border-radius: 3px;
+}
+.catalog-section:hover::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
 @media (width > 768px) {
   .catalog-container {
     height: 60vh;
     background-color: var(--clr-white);
     gap: 20px;
-    padding: 84px 395px 0 395px;
+    padding: 84px 15% 0 15%;
     justify-content: space-evenly;
   }
   .catalog-section {
     padding: 0;
-    overflow-y: auto;
   }
   .catalog-section h3 {
     font-size: 13px;
@@ -44,16 +55,5 @@
     cursor: pointer;
     font-weight: 700;
     color: var(--clr-light-gray-500);
-  }
-
-  .catalog-section::-webkit-scrollbar {
-    width: 6px;
-  }
-  .catalog-section::-webkit-scrollbar-thumb {
-    background-color: transparent;
-    border-radius: 3px;
-  }
-  .catalog-section:hover::-webkit-scrollbar-thumb {
-    background-color: rgba(0, 0, 0, 0.2);
   }
 }

@@ -23,7 +23,8 @@ const Catalog = ({ show }: CatalogProps) => {
     getAllBrands();
   }, []);
 
-  if (categoriesLoading || brandsLoading) return <div>Loading...</div>;
+  if (categoriesLoading || brandsLoading)
+    return <div style={{ display: show ? "flex" : "none" }}>Loading...</div>;
 
   return (
     <div

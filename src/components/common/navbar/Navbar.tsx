@@ -6,7 +6,7 @@ import { useState } from "react";
 import Catalog from "@/components/catalog/Catalog";
 
 const Navbar = () => {
-  const [showCatalog, setShowCatalog] = useState(true);
+  const [showCatalog, setShowCatalog] = useState(false);
 
   const toggleShowCatalog = () => setShowCatalog(!showCatalog);
 
