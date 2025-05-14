@@ -2,14 +2,10 @@ import { useState } from "react";
 
 import axiosInstance from "@/services/apiClient";
 
-import type { IProductServiceResponse } from "@/services/productsService";
-
 type fetchMethod = "GET" | "POST" | "PUT" | "DELETE";
-type useAxiosData = null | IProductServiceResponse;
 
 export const useAxios = () => {
   const [loading, setLoading] = useState(false);
-  const [data, setData] = useState<useAxiosData>(null);
 
   const fetchData = async (url: string, method: fetchMethod, body?: any) => {
     setLoading(true);
@@ -19,13 +15,13 @@ export const useAxios = () => {
         method,
         data: body,
       });
-      setData(response.data);
+      return response.data;
     } catch (error) {
-      setData(null);
+      throw error;
     } finally {
       setLoading(false);
     }
   };
 
-  return { loading, data, fetchData };
+  return { loading, fetchData };
 };

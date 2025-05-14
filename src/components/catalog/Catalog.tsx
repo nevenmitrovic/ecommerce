@@ -1,30 +1,42 @@
 import "./catalog.style.css";
 
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { NavLink } from "react-router";
 
-import { useProductsService } from "@/services/productsService";
+import {
+  useProductsService,
+  type ICategory,
+  type IBrand,
+} from "@/services/productsService";
 
 interface CatalogProps {
   show: boolean;
 }
 
 const Catalog = ({ show }: CatalogProps) => {
-  const {
-    categories,
-    categoriesLoading,
-    getAllCategories,
-    brands,
-    brandsLoading,
-    getAllBrands,
-  } = useProductsService();
+  const { loading, getAllCategories, getAllBrands } = useProductsService();
+  const [categories, setCategories] = useState<ICategory[]>([]);
+  const [brands, setBrands] = useState<IBrand[]>([]);
 
   useEffect(() => {
-    getAllCategories();
-    getAllBrands();
+    const fetchCategories = async () => {
+      const categoriesResponse = await getAllCategories();
+      if (categoriesResponse) {
+        setCategories(categoriesResponse.data);
+      }
+    };
+    const fetchBrands = async () => {
+      const brandsResponse = await getAllBrands();
+      if (brandsResponse) {
+        setBrands(brandsResponse.data);
+      }
+    };
+
+    fetchCategories();
+    fetchBrands();
   }, []);
 
-  if (categoriesLoading || brandsLoading)
+  if (loading)
     return <div style={{ display: show ? "flex" : "none" }}>Loading...</div>;
 
   return (
@@ -35,7 +47,7 @@ const Catalog = ({ show }: CatalogProps) => {
       <section className="catalog-section">
         <h3>CATEGORIES</h3>
         <ul>
-          {categories?.data.map((category) => (
+          {categories?.map((category) => (
             <li key={category.id}>
               <NavLink to={`/catalog/category/${category.id}/products`}>
                 {category.name}
@@ -47,7 +59,7 @@ const Catalog = ({ show }: CatalogProps) => {
       <section className="catalog-section">
         <h3>BRANDS</h3>
         <ul>
-          {brands?.data.map((brand) => (
+          {brands?.map((brand) => (
             <li key={brand.id}>
               <NavLink to={`/catalog/brand/${brand.id}/products`}>
                 {brand.name}
