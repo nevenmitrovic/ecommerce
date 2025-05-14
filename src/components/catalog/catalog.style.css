@@ -29,6 +29,7 @@
   }
   .catalog-section {
     padding: 0;
+    overflow-y: auto;
   }
   .catalog-section h3 {
     font-size: 13px;
@@ -38,5 +39,21 @@
   }
   .catalog-section ul {
     font-size: 20px;
+  }
+  .catalog-section ul li:hover {
+    cursor: pointer;
+    font-weight: 700;
+    color: var(--clr-light-gray-500);
+  }
+
+  .catalog-section::-webkit-scrollbar {
+    width: 6px;
+  }
+  .catalog-section::-webkit-scrollbar-thumb {
+    background-color: transparent;
+    border-radius: 3px;
+  }
+  .catalog-section:hover::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, 0.2);
   }
 }

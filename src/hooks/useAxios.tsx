@@ -2,10 +2,10 @@ import { useState } from "react";
 
 import axiosInstance from "@/services/apiClient";
 
-import type { IGetAllCategoriesResponse } from "@/services/productsService";
+import type { IProductServiceResponse } from "@/services/productsService";
 
 type fetchMethod = "GET" | "POST" | "PUT" | "DELETE";
-type useAxiosData = null | IGetAllCategoriesResponse;
+type useAxiosData = null | IProductServiceResponse;
 
 export const useAxios = () => {
   const [loading, setLoading] = useState(false);

@@ -1,25 +1,37 @@
 import { useAxios } from "@/hooks/useAxios";
 
-export interface Category {
+export interface ICategory {
   id: number;
   name: string;
   slug: string;
 }
-export interface IGetAllCategoriesResponse {
+export interface IProductServiceResponse {
   count: number;
-  data: Category[];
+  data: ICategory[] | IBrand[];
+}
+export interface IBrand {
+  id: number;
+  name: string;
 }
 
 export function useProductsService() {
-  const { loading, data, fetchData } = useAxios();
+  const categoriesAxios = useAxios();
+  const brandsAxios = useAxios();
 
   const getAllCategories = async () => {
-    await fetchData("/categories", "GET");
+    await categoriesAxios.fetchData("/categories", "GET");
+  };
+
+  const getAllBrands = async () => {
+    await brandsAxios.fetchData("/brands", "GET");
   };
 
   return {
-    loading,
-    data,
+    categoriesLoading: categoriesAxios.loading,
+    categories: categoriesAxios.data,
+    brandsLoading: brandsAxios.loading,
+    brands: brandsAxios.data,
     getAllCategories,
+    getAllBrands,
   };
 }

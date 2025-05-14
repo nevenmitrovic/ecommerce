@@ -1,7 +1,6 @@
 import "./catalog.style.css";
 
 import { useEffect } from "react";
-import { NavLink } from "react-router";
 
 import { useProductsService } from "@/services/productsService";
 
@@ -10,14 +9,21 @@ interface CatalogProps {
 }
 
 const Catalog = ({ show }: CatalogProps) => {
-  const { loading, data, getAllCategories } = useProductsService();
+  const {
+    categories,
+    categoriesLoading,
+    getAllCategories,
+    brands,
+    brandsLoading,
+    getAllBrands,
+  } = useProductsService();
 
   useEffect(() => {
     getAllCategories();
+    getAllBrands();
   }, []);
 
-  if (loading) return <div>Loading...</div>;
-  if (!data) return <div>No data</div>;
+  if (categoriesLoading || brandsLoading) return <div>Loading...</div>;
 
   return (
     <div
@@ -27,19 +33,17 @@ const Catalog = ({ show }: CatalogProps) => {
       <section className="catalog-section">
         <h3>CATEGORIES</h3>
         <ul>
-          {data?.data.map((category) => (
-            <li key={category.id}>
-              <NavLink to={`/${category.slug}`}>{category.name}</NavLink>
-            </li>
+          {categories?.data.map((category) => (
+            <li key={category.id}>{category.name}</li>
           ))}
         </ul>
       </section>
       <section className="catalog-section">
         <h3>BRANDS</h3>
         <ul>
-          <li>brand title</li>
-          <li>brand title</li>
-          <li>brand title</li>
+          {brands?.data.map((brand) => (
+            <li key={brand.id}>{brand.name}</li>
+          ))}
         </ul>
       </section>
     </div>
