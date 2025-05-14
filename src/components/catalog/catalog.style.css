@@ -34,7 +34,7 @@
 
 @media (width > 768px) {
   .catalog-container {
-    height: 60vh;
+    height: 80vh;
     background-color: var(--clr-white);
     gap: 20px;
     padding: 84px 15% 0 15%;
