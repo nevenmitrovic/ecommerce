@@ -1,6 +1,7 @@
 import "./catalog.style.css";
 
 import { useEffect } from "react";
+import { NavLink } from "react-router";
 
 import { useProductsService } from "@/services/productsService";
 
@@ -35,7 +36,11 @@ const Catalog = ({ show }: CatalogProps) => {
         <h3>CATEGORIES</h3>
         <ul>
           {categories?.data.map((category) => (
-            <li key={category.id}>{category.name}</li>
+            <li key={category.id}>
+              <NavLink to={`/catalog/category/${category.id}/products`}>
+                {category.name}
+              </NavLink>
+            </li>
           ))}
         </ul>
       </section>
@@ -43,7 +48,11 @@ const Catalog = ({ show }: CatalogProps) => {
         <h3>BRANDS</h3>
         <ul>
           {brands?.data.map((brand) => (
-            <li key={brand.id}>{brand.name}</li>
+            <li key={brand.id}>
+              <NavLink to={`/catalog/brand/${brand.id}/products`}>
+                {brand.name}
+              </NavLink>
+            </li>
           ))}
         </ul>
       </section>
