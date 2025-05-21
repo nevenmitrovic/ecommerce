@@ -2,6 +2,7 @@ import { useParams } from "react-router";
 
 import PageHeader from "@/components/catalog-page/header/PageHeader";
 import Navbar from "@/components/common/navbar/Navbar";
+import SortingControl from "@/components/catalog-page/sorting-control/SortingControl";
 
 const Catalog = () => {
   const { unit, id } = useParams();
@@ -10,6 +11,7 @@ const Catalog = () => {
     <>
       <Navbar />
       <PageHeader unit={unit} />
+      <SortingControl unit={unit} />
       <p>id: {id}</p>
     </>
   );

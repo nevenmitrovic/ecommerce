@@ -1,0 +1,14 @@
+.sort-control-element {
+  border: none;
+  background-color: transparent;
+  color: var(--clr-light-gray-500);
+  text-align: center;
+  margin-left: 4px;
+}
+.sort-control-element:focus {
+  border: none;
+}
+select option {
+  color: var(--clr-gray);
+  cursor: pointer;
+}

@@ -14,3 +14,5 @@ export const footerSections = [
     { label: "Instagram", path: "#" },
   ],
 ];
+
+export const sortOptions = ["best_seller", "sale_price", "regular_price"];
