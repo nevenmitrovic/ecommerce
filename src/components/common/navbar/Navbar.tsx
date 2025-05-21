@@ -3,7 +3,7 @@ import "./navbar.style.css";
 import { NavLink } from "react-router";
 import { useState } from "react";
 
-import Catalog from "@/components/catalog/Catalog";
+import Catalog from "@/components/common/navbar/catalog-navbar/Catalog";
 
 const Navbar = () => {
   const [showCatalog, setShowCatalog] = useState(false);

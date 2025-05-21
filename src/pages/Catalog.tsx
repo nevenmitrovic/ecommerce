@@ -1,13 +1,17 @@
 import { useParams } from "react-router";
 
+import PageHeader from "@/components/catalog-page/header/PageHeader";
+import Navbar from "@/components/common/navbar/Navbar";
+
 const Catalog = () => {
   const { unit, id } = useParams();
 
   return (
-    <div>
-      <h1>unit: {unit}</h1>
+    <>
+      <Navbar />
+      <PageHeader unit={unit} />
       <p>id: {id}</p>
-    </div>
+    </>
   );
 };
 
