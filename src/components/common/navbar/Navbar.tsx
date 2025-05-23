@@ -1,41 +1,65 @@
 import "./navbar.style.css";
 
-import { NavLink } from "react-router";
-import { useState } from "react";
+import { NavLink, useNavigate } from "react-router";
+import { useCallback, useState } from "react";
 
 import Catalog from "@/components/common/navbar/catalog-navbar/Catalog";
 
 const Navbar = () => {
   const [showCatalog, setShowCatalog] = useState(false);
 
+  const navigate = useNavigate();
+
   const toggleShowCatalog = () => setShowCatalog(!showCatalog);
+  const navigateAndToggle = useCallback(
+    (path: string) => (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
+      e.preventDefault();
+      navigate(path);
+      if (showCatalog) toggleShowCatalog();
+    },
+    [showCatalog]
+  );
 
   return (
     <header>
       <nav>
         <div className="logo">
-          <NavLink to="/">FABLE</NavLink>
+          <NavLink to="/" onClick={navigateAndToggle("/")}>
+            FABLE
+          </NavLink>
         </div>
         <div>
           <ul className="navbar-list">
             <li onClick={toggleShowCatalog}>CATALOG</li>
-            <li className="mobile-hidden">ABOUT US</li>
-            <li className="mobile-hidden">CONTACT</li>
+            <li className="mobile-hidden">
+              <NavLink to="#" onClick={navigateAndToggle("#")}>
+                ABOUT US
+              </NavLink>
+            </li>
+            <li className="mobile-hidden">
+              <NavLink to="#" onClick={navigateAndToggle("#")}>
+                CONTACT
+              </NavLink>
+            </li>
           </ul>
         </div>
         <div>
           <ul className="navbar-list">
             <li>
-              <NavLink to="#">CART</NavLink>
+              <NavLink to="#" onClick={navigateAndToggle("#")}>
+                CART
+              </NavLink>
             </li>
             <li>
-              <NavLink to="#">LOGIN</NavLink>
+              <NavLink to="#" onClick={navigateAndToggle("#")}>
+                LOGIN
+              </NavLink>
             </li>
           </ul>
         </div>
       </nav>
 
-      <Catalog show={showCatalog} />
+      <Catalog show={showCatalog} toggleCatalog={navigateAndToggle} />
     </header>
   );
 };

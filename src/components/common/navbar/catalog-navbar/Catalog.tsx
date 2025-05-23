@@ -11,9 +11,12 @@ import {
 
 interface CatalogProps {
   show: boolean;
+  toggleCatalog: (
+    path: string
+  ) => (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => void;
 }
 
-const Catalog = ({ show }: CatalogProps) => {
+const Catalog = ({ show, toggleCatalog }: CatalogProps) => {
   const { loading, getAllCategories, getAllBrands } = useProductsService();
   const [categories, setCategories] = useState<ICategory[]>([]);
   const [brands, setBrands] = useState<IBrand[]>([]);
@@ -49,7 +52,12 @@ const Catalog = ({ show }: CatalogProps) => {
         <ul>
           {categories?.map((category) => (
             <li key={category.id}>
-              <NavLink to={`/catalog/category/${category.id}/products`}>
+              <NavLink
+                to={`/catalog/category/${category.id}/products`}
+                onClick={toggleCatalog(
+                  `/catalog/category/${category.id}/products`
+                )}
+              >
                 {category.name}
               </NavLink>
             </li>
@@ -61,7 +69,10 @@ const Catalog = ({ show }: CatalogProps) => {
         <ul>
           {brands?.map((brand) => (
             <li key={brand.id}>
-              <NavLink to={`/catalog/brand/${brand.id}/products`}>
+              <NavLink
+                to={`/catalog/brand/${brand.id}/products`}
+                onClick={toggleCatalog(`/catalog/brand/${brand.id}/products`)}
+              >
                 {brand.name}
               </NavLink>
             </li>
