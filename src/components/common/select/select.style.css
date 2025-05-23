@@ -10,5 +10,13 @@
 }
 select option {
   color: var(--clr-gray);
+}
+select {
   cursor: pointer;
+}
+
+@media (width > 768px) {
+  select option {
+    font-size: 24px;
+  }
 }
