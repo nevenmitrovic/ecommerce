@@ -1,0 +1,21 @@
+.product-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  max-width: 157px;
+  max-height: 201px;
+  text-align: center;
+}
+.product-card > img {
+  width: 157px;
+  height: 156px;
+  margin-bottom: 12px;
+}
+.product-title {
+  font-size: 10px;
+  color: var(--clr-light-gray-500);
+}
+.product-price {
+  font-size: 14px;
+}
