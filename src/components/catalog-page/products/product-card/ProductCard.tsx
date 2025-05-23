@@ -1,9 +1,9 @@
 import "./product-card.style.css";
 
-interface ProductCardProps {
+export interface ProductCardProps {
   img: string;
   title: string;
-  price: string;
+  price: number;
 }
 
 const ProductCard = ({ img, title, price }: ProductCardProps) => {

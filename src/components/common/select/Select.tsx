@@ -17,7 +17,11 @@ const Select = ({ options, onChange }: ISelectProps) => {
         className="sort-control-element"
       >
         {options.map((option) => {
-          return <option value={option}>{getOptionTitle(option)}</option>;
+          return (
+            <option key={option} value={option}>
+              {getOptionTitle(option)}
+            </option>
+          );
         })}
       </select>
     </>

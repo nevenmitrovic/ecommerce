@@ -51,7 +51,7 @@ export function useProductsService() {
   };
 
   const getAllProductsFromCategory = async (
-    categoryId: number
+    categoryId: string
   ): Promise<IProductServiceResponse<IProduct>> => {
     const response = await apiClient.fetchData(
       `/categories/${categoryId}/products`,
@@ -61,7 +61,7 @@ export function useProductsService() {
   };
 
   const getAllProductsFromBrand = async (
-    brandId: number
+    brandId: string
   ): Promise<IProductServiceResponse<IProduct>> => {
     const response = await apiClient.fetchData(
       `/brands/${brandId}/products`,
