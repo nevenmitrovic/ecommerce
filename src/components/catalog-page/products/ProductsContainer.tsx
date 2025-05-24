@@ -16,7 +16,8 @@ const ProductsContainer = ({ data }: ProductsContainerProps) => {
             key={product.id}
             img={product.images[0]}
             title={product.name}
-            price={product.sale_price}
+            sale_price={product.sale_price}
+            regular_price={product.regular_price}
           />
         );
       })}
