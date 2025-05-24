@@ -70,8 +70,10 @@ export function useProductsService() {
     return response;
   };
 
-  const getProductById = async (productId: number) => {
-    const response = await apiClient.fetchData(`/product/${productId}`, "GET");
+  const getProductById = async (
+    productId: string
+  ): Promise<Pick<IProductServiceResponse<IProduct>, "data">> => {
+    const response = await apiClient.fetchData(`/products/${productId}`, "GET");
     return response;
   };
 
