@@ -14,13 +14,16 @@
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-router": "^7.6.0",
-    "react-toastify": "^11.0.5"
+    "react-slick": "^0.30.3",
+    "react-toastify": "^11.0.5",
+    "slick-carousel": "^1.8.1"
   },
   "devDependencies": {
     "@eslint/js": "^9.25.0",
     "@types/node": "^22.15.17",
     "@types/react": "18.2.56",
     "@types/react-dom": "18.2.19",
+    "@types/react-slick": "^0.23.13",
     "@vitejs/plugin-react": "^4.4.1",
     "eslint": "^9.25.0",
     "eslint-plugin-react-hooks": "^5.2.0",
