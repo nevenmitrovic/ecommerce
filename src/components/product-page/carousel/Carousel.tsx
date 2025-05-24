@@ -3,7 +3,7 @@ import "slick-carousel/slick/slick-theme.css";
 import "./carousel.style.css";
 import Slider from "react-slick";
 
-interface CarouselProps {
+export interface CarouselProps {
   images: string[];
 }
 

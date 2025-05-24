@@ -8,3 +8,6 @@
   display: block;
   margin: 0 auto;
 }
+.slick-dots {
+  margin-bottom: 36px;
+}

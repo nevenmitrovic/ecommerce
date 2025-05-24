@@ -3,7 +3,7 @@ import { useParams } from "react-router";
 
 import Navbar from "@/components/common/navbar/Navbar";
 import Header from "@/components/product-page/header/Header";
-import Carousel from "@/components/product-page/carousel/Carousel";
+import CarouselCard from "@/components/product-page/carousel-card/CarouselCard";
 
 import { useProductsService, type IProduct } from "@/services/productsService";
 
@@ -30,7 +30,7 @@ const Product = () => {
     <>
       <Navbar />
       <Header category={product?.category.name} brand={product?.brand.name} />
-      <Carousel images={product.images} />
+      <CarouselCard product={product} />
     </>
   );
 };
