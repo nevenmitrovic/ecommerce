@@ -14,6 +14,7 @@ const ProductsContainer = ({ data }: ProductsContainerProps) => {
         return (
           <ProductCard
             key={product.id}
+            id={product.id}
             img={product.images[0]}
             title={product.name}
             sale_price={product.sale_price}

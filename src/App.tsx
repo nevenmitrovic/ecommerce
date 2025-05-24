@@ -4,6 +4,7 @@ import { SortContextProvider } from "@/contexts/SortContext";
 
 import Home from "@/pages/Home";
 import Catalog from "@/pages/Catalog";
+import Product from "@/pages/Product";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
           </SortContextProvider>
         }
       />
+      <Route path="/product/:id" element={<Product />} />
     </Routes>
   );
 }
