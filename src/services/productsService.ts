@@ -70,11 +70,17 @@ export function useProductsService() {
     return response;
   };
 
+  const getProductById = async (productId: number) => {
+    const response = await apiClient.fetchData(`/product/${productId}`, "GET");
+    return response;
+  };
+
   return {
     loading: apiClient.loading,
     getAllCategories,
     getAllBrands,
     getAllProductsFromCategory,
     getAllProductsFromBrand,
+    getProductById,
   };
 }
