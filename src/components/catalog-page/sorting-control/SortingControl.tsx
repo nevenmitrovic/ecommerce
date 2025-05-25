@@ -6,7 +6,7 @@ import { capitalize } from "@/helpers/globalHelpers";
 
 import { sortOptions } from "@/constants/navigation";
 import { useContext } from "react";
-import { SortContext } from "@/contexts/SortContext";
+import { SortContext } from "@/stores/contexts/SortContext";
 
 interface SortingControlProps {
   unit?: string;

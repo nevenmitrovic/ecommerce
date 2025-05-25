@@ -1,6 +1,6 @@
 import { Route, Routes } from "react-router";
 
-import { SortContextProvider } from "@/contexts/SortContext";
+import { SortContextProvider } from "@/stores/contexts/SortContext";
 
 import Home from "@/pages/Home";
 import Catalog from "@/pages/Catalog";

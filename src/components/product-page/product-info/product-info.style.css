@@ -1,0 +1,9 @@
+.product-info-container {
+  padding: 12px 20px 20px 20px;
+}
+.product-info-container h3 {
+  margin-bottom: 20px;
+}
+.product-info-container > div > :last-child {
+  margin-bottom: 20px;
+}

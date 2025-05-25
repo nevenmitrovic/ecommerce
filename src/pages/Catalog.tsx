@@ -7,7 +7,7 @@ import SortingControl from "@/components/catalog-page/sorting-control/SortingCon
 import ProductsContainer from "@/components/catalog-page/products/ProductsContainer";
 
 import { useProductsService, type IProduct } from "@/services/productsService";
-import { SortContext } from "@/contexts/SortContext";
+import { SortContext } from "@/stores/contexts/SortContext";
 
 const Catalog = () => {
   const { unit, id } = useParams();
