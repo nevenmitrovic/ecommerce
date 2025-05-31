@@ -2,3 +2,9 @@
   padding: 12px 20px;
   font-size: 14px;
 }
+
+@media (width > 768px) {
+  .header-title {
+    padding: 12px 60px;
+  }
+}

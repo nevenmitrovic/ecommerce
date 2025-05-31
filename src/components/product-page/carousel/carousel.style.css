@@ -4,11 +4,23 @@
   overflow-x: hidden;
 }
 .carousel-img {
-  max-height: 333px;
-  max-width: 335px;
+  height: 333px;
+  width: 335px;
   display: block;
   margin: 0 auto;
 }
 .slick-dots {
   margin-bottom: 24px;
+}
+
+@media (width > 768px) {
+  .carousel-container {
+    max-width: 650px;
+    max-height: 674px;
+    margin-bottom: 20px;
+  }
+  .carousel-img {
+    width: 650px;
+    height: 674px;
+  }
 }

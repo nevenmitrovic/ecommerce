@@ -23,3 +23,23 @@
   width: 100%;
   max-width: 100%;
 }
+
+@media (width > 768px) {
+  .carousel-card {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    padding: 12px 60px 26px 60px;
+  }
+  .card-title,
+  .card-regular-price,
+  .card-price {
+    font-size: 28px;
+    color: var(--clr-primary);
+  }
+
+  .order-and-desc {
+    display: flex;
+    flex-direction: column-reverse;
+    padding-top: 20px;
+  }
+}

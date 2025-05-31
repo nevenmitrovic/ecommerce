@@ -19,19 +19,21 @@ const Carousel = ({ images }: CarouselProps) => {
   };
 
   return (
-    <Slider {...settings}>
-      {images.map((img, index) => {
-        return (
-          <div key={img} className="carousel-img-container">
-            <img
-              className="carousel-img"
-              src={img}
-              alt={`product-image-${index}`}
-            />
-          </div>
-        );
-      })}
-    </Slider>
+    <div className="carousel-container">
+      <Slider {...settings}>
+        {images.map((img, index) => {
+          return (
+            <div key={img} className="carousel-img-container">
+              <img
+                className="carousel-img"
+                src={img}
+                alt={`product-image-${index}`}
+              />
+            </div>
+          );
+        })}
+      </Slider>
+    </div>
   );
 };
 
