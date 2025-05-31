@@ -1,6 +1,5 @@
-/* DESKTOP UI DESIGN */
 .button {
-  max-width: 315px;
+  width: 100%;
   padding: 12px 24px;
   font-size: 20px;
   text-align: center;
@@ -31,4 +30,14 @@
   background-color: var(--clr-secondary);
   color: var(--clr-white);
   border: 1px solid var(--clr-white);
+}
+
+@media (width > 768px) {
+  .button {
+    max-width: 315px;
+    padding: 12px 24px;
+    font-size: 20px;
+    text-align: center;
+    cursor: pointer;
+  }
 }
