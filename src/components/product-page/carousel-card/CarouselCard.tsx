@@ -9,13 +9,16 @@ import { CartContext } from '@/stores/contexts/CartContext';
 import { type IProduct } from '@/services/productsService';
 
 import { useContext } from 'react';
+import { useNavigate } from 'react-router';
 
 interface CarouselCardProps {
 	product: IProduct;
 }
 
 const CarouselCard = ({ product }: CarouselCardProps) => {
-	const { addItemToCart } = useContext(CartContext);
+	const { addItemToCart, isInCart } = useContext(CartContext);
+
+	const navigate = useNavigate();
 
 	return (
 		<div className='carousel-card'>
@@ -36,13 +39,22 @@ const CarouselCard = ({ product }: CarouselCardProps) => {
 					/>
 
 					<div className='button-container'>
-						<Button
-							type='button'
-							onClick={() => addItemToCart(product)}
-							text='Add to cart'
-							classNam='main-button'
-							disabled={!product.in_stock}
-						/>
+						{isInCart(product) ? (
+							<Button
+								type='button'
+								onClick={() => navigate('/cart')}
+								text='Go to cart'
+								classNam='main-button'
+							/>
+						) : (
+							<Button
+								type='button'
+								onClick={() => addItemToCart(product)}
+								text='Add to cart'
+								classNam='main-button'
+								disabled={!product.in_stock}
+							/>
+						)}
 					</div>
 				</div>
 			</div>
