@@ -1,48 +1,53 @@
-import "./carousel-card.style.css";
+import './carousel-card.style.css';
 
-import Carousel from "@/components/product-page/carousel/Carousel";
-import ProductInfo from "@/components/product-page/product-info/ProductInfo";
-import Button from "@/components/common/buttons/Button";
+import Carousel from '@/components/product-page/carousel/Carousel';
+import ProductInfo from '@/components/product-page/product-info/ProductInfo';
+import Button from '@/components/common/buttons/Button';
 
-import { type IProduct } from "@/services/productsService";
+import { CartContext } from '@/stores/contexts/CartContext';
+
+import { type IProduct } from '@/services/productsService';
+
+import { useContext } from 'react';
 
 interface CarouselCardProps {
-  product: IProduct;
+	product: IProduct;
 }
 
 const CarouselCard = ({ product }: CarouselCardProps) => {
-  return (
-    <div className="carousel-card">
-      <Carousel images={product.images} />
+	const { addItemToCart } = useContext(CartContext);
 
-      <div>
-        <div>
-          <div className="card-title">{product.name}</div>
-          <div className="card-regular-price">
-            ${product.regular_price.toFixed(2)}
-          </div>
-          <div className="card-price">${product.sale_price.toFixed(2)}</div>
-        </div>
+	return (
+		<div className='carousel-card'>
+			<Carousel images={product.images} />
 
-        <div className="order-and-desc">
-          <ProductInfo
-            description={product.description}
-            specs={product.specs}
-            features={product.features}
-          />
+			<div>
+				<div>
+					<div className='card-title'>{product.name}</div>
+					<div className='card-regular-price'>${product.regular_price.toFixed(2)}</div>
+					<div className='card-price'>${product.sale_price.toFixed(2)}</div>
+				</div>
 
-          <div className="button-container">
-            <Button
-              type="button"
-              onClick={() => console.log("clicked")}
-              text="Add to cart"
-              classNam="main-button"
-            />
-          </div>
-        </div>
-      </div>
-    </div>
-  );
+				<div className='order-and-desc'>
+					<ProductInfo
+						description={product.description}
+						specs={product.specs}
+						features={product.features}
+					/>
+
+					<div className='button-container'>
+						<Button
+							type='button'
+							onClick={() => addItemToCart(product)}
+							text='Add to cart'
+							classNam='main-button'
+							disabled={!product.in_stock}
+						/>
+					</div>
+				</div>
+			</div>
+		</div>
+	);
 };
 
 export default CarouselCard;
