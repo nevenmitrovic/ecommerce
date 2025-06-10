@@ -24,6 +24,7 @@ const loadCartFromStorage = (): ICartItem[] => {
 };
 
 const saveCartToStorage = (cart: ICartItem[]): void => {
+	sessionStorage.removeItem(CART_STORAGE_KEY);
 	sessionStorage.setItem(CART_STORAGE_KEY, JSON.stringify(cart));
 };
 
@@ -41,16 +42,14 @@ export const CartContextProvider = ({ children }: any) => {
 	// initialize cart from sessionStorage
 	const [cart, setCart] = useState<ICartItem[]>(() => loadCartFromStorage());
 
-	// save cart to sessionStorage whenever cart changes
+	// save new cart in session storage if the cart has changed
 	useEffect(() => {
 		saveCartToStorage(cart);
 	}, [cart]);
 
 	const addItemToCart = (newItem: IProduct) => {
 		setCart((prevCart) => {
-			const existingItem = prevCart.find(
-				(item) => (item.product.category && item.product.id) === (newItem.category && newItem.id),
-			);
+			const existingItem = prevCart.find((item) => item.product.id === newItem.id);
 
 			if (existingItem) {
 				return prevCart.map((item) => {
@@ -88,9 +87,7 @@ export const CartContextProvider = ({ children }: any) => {
 	const getTotalItems = () => cart.length;
 
 	const isInCart = (newItem: IProduct) => {
-		return cart.some(
-			(item) => (item.product.category && item.product.id) === (newItem.category && newItem.id),
-		);
+		return cart.some((item) => item.product.id === newItem.id);
 	};
 
 	return (

@@ -39,22 +39,21 @@ const CarouselCard = ({ product }: CarouselCardProps) => {
 					/>
 
 					<div className='button-container'>
-						{isInCart(product) ? (
+						{
 							<Button
 								type='button'
-								onClick={() => navigate('/cart')}
-								text='Go to cart'
-								classNam='main-button'
-							/>
-						) : (
-							<Button
-								type='button'
-								onClick={() => addItemToCart(product)}
-								text='Add to cart'
+								onClick={() => (isInCart(product) ? navigate('/cart') : addItemToCart(product))}
+								text={
+									!product.in_stock
+										? 'Out of stock'
+										: isInCart(product)
+										? 'Go to cart'
+										: 'Add to cart'
+								}
 								classNam='main-button'
 								disabled={!product.in_stock}
 							/>
-						)}
+						}
 					</div>
 				</div>
 			</div>
