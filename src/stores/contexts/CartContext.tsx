@@ -3,7 +3,7 @@ import { createContext, useEffect, useState } from 'react';
 
 const CART_STORAGE_KEY = 'ecommerce-cart';
 
-interface ICartItem {
+export interface ICartItem {
 	product: IProduct;
 	quantity: number;
 }

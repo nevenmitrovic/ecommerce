@@ -48,7 +48,7 @@ const Navbar = () => {
 				<div>
 					<ul className='navbar-list'>
 						<li>
-							<NavLink to='#' onClick={navigateAndToggle('#')}>
+							<NavLink to='/cart' onClick={navigateAndToggle('/cart')}>
 								CART ({getTotalItems()})
 							</NavLink>
 						</li>

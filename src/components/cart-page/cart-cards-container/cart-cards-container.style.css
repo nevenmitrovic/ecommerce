@@ -1,0 +1,9 @@
+.cart-cards-container {
+	padding: 12px 20px;
+}
+
+@media (width > 768px) {
+	.cart-cards-container {
+		padding: 42px 60px;
+	}
+}

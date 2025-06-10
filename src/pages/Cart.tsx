@@ -3,15 +3,14 @@ import { useContext } from 'react';
 import { CartContext } from '@/stores/contexts/CartContext';
 
 import MainLayout from '@/layouts/MainLayout';
+import CartCardsContainer from '@/components/cart-page/cart-cards-container/CartCardsContainer';
 
 const Cart = () => {
-	const { cart } = useContext(CartContext);
+	const { getTotalPrice } = useContext(CartContext);
 
 	return (
 		<MainLayout>
-			{cart.map((item) => {
-				return <div>{item.product.id}</div>;
-			})}
+			<CartCardsContainer />
 		</MainLayout>
 	);
 };
