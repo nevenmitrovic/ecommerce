@@ -1,4 +1,5 @@
-import type { ICartItem } from '@/stores/contexts/CartContext';
+import { useContext } from 'react';
+import { type ICartItem, CartContext } from '@/stores/contexts/CartContext';
 
 import './cart-card.style.css';
 
@@ -7,6 +8,8 @@ interface CartCardProps {
 }
 
 const CartCard = ({ product }: CartCardProps) => {
+	const { addItemToCart, decreaseItemQuantity, removeItemFromCart } = useContext(CartContext);
+
 	return (
 		<div className='cart-card-container'>
 			<img src={product.product.images[0]} alt='product image' />
@@ -21,16 +24,17 @@ const CartCard = ({ product }: CartCardProps) => {
 						Price:
 						<span>
 							{product.product.sale_price
-								? product.product.sale_price
-								: product.product.regular_price}
+								? product.product.sale_price.toFixed(2)
+								: product.product.regular_price.toFixed(2)}
 							$
 						</span>
 					</div>
 					<div className='quantity-controller'>
 						<div className='product-amount'>
-							<span>+</span> {product.quantity} <span>-</span>
+							<span onClick={() => addItemToCart(product.product)}>+</span> {product.quantity}
+							<span onClick={() => decreaseItemQuantity(product.product.id)}>-</span>
 						</div>
-						<button>Delete</button>
+						<button onClick={() => removeItemFromCart(product.product.id)}>Delete</button>
 					</div>
 				</div>
 			</div>

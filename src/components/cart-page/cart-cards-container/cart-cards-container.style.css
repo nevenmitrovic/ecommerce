@@ -1,9 +1,11 @@
-.cart-cards-container {
+.cart-cards-container,
+.empty-cart {
 	padding: 12px 20px;
 }
 
 @media (width > 768px) {
-	.cart-cards-container {
+	.cart-cards-container,
+	.empty-cart {
 		padding: 42px 60px;
 	}
 }

@@ -2,6 +2,7 @@
 	display: grid;
 	grid-template-columns: 80px 1fr;
 	gap: 10px;
+	margin-block-end: 10px;
 }
 .cart-card-container > img {
 	width: 80px;
@@ -65,5 +66,26 @@
 	.cart-card-container > img {
 		width: 183px;
 		height: 203px;
+	}
+	.cart-card-title {
+		font-size: 16px;
+	}
+	.cart-card-category,
+	.cart-card-brand {
+		font-size: 12px;
+	}
+	.product-price {
+		font-size: 16px;
+	}
+	.product-amount > span {
+		margin-inline: 20px;
+		font-size: 24px;
+	}
+	.product-amount > span:hover {
+		cursor: pointer;
+	}
+	.quantity-controller > button:hover {
+		cursor: pointer;
+		color: var(--clr-secondary);
 	}
 }

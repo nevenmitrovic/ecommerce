@@ -11,6 +11,7 @@ export interface ICartItem {
 interface ICartContext {
 	cart: ICartItem[];
 	addItemToCart: (newItem: IProduct) => void;
+	decreaseItemQuantity: (id: number) => void;
 	removeItemFromCart: (id: number) => void;
 	clearCart: () => void;
 	getTotalPrice: () => number;
@@ -31,6 +32,7 @@ const saveCartToStorage = (cart: ICartItem[]): void => {
 export const CartContext = createContext<ICartContext>({
 	cart: [],
 	addItemToCart: () => {},
+	decreaseItemQuantity: () => {},
 	removeItemFromCart: () => {},
 	clearCart: () => {},
 	getTotalPrice: () => 0,
@@ -65,6 +67,22 @@ export const CartContextProvider = ({ children }: any) => {
 		});
 	};
 
+	const decreaseItemQuantity = (id: number) => {
+		setCart((prevCart) => {
+			return prevCart
+				.map((item) => {
+					if (item.product.id === id) {
+						if (item.quantity <= 1) {
+							return item;
+						}
+						return { ...item, quantity: item.quantity - 1 };
+					}
+					return item;
+				})
+				.filter((item) => !(item.product.id === id && item.quantity <= 1));
+		});
+	};
+
 	const removeItemFromCart = (id: number) => {
 		setCart((prevCart) => prevCart.filter((item) => item.product.id !== id));
 	};
@@ -95,6 +113,7 @@ export const CartContextProvider = ({ children }: any) => {
 			value={{
 				cart,
 				addItemToCart,
+				decreaseItemQuantity,
 				removeItemFromCart,
 				clearCart,
 				getTotalPrice,
