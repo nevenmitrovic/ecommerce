@@ -1,26 +1,26 @@
 .carousel-img-container {
-  padding: 20px 20px 8px 20px;
-  width: 100%;
-  overflow-x: hidden;
+	padding: 20px 20px 8px 20px;
+	width: 100%;
+	overflow-x: hidden;
 }
 .carousel-img {
-  height: 333px;
-  width: 335px;
-  display: block;
-  margin: 0 auto;
+	height: 333px;
+	width: 335px;
+	display: block;
+	margin: 0 auto;
 }
 .slick-dots {
-  margin-bottom: 24px;
+	margin-bottom: 24px;
 }
 
 @media (width > 768px) {
-  .carousel-container {
-    max-width: 650px;
-    max-height: 674px;
-    margin-bottom: 20px;
-  }
-  .carousel-img {
-    width: 650px;
-    height: 674px;
-  }
+	.carousel-container {
+		max-width: 650px;
+		max-height: 674px;
+		margin-bottom: 20px;
+	}
+	.carousel-img {
+		width: 650px;
+		height: 674px;
+	}
 }

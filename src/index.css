@@ -139,27 +139,36 @@
 	body {
 		color: var(--clr-secondary);
 	}
+
+	html,
+	body {
+		max-width: 100%;
+		overflow-x: hidden;
+	}
 }
 
-* {
-	box-sizing: border-box;
-	padding: 0;
-	margin: 0;
-	text-decoration: none;
-}
+@layer components {
+	* {
+		box-sizing: border-box;
+		padding: 0;
+		margin: 0;
+		text-decoration: none;
+	}
 
-a {
-	color: inherit;
-}
+	a {
+		color: inherit;
+	}
 
-a:hover,
-a:focus {
-	color: var(--clr-light-gray-500);
-}
+	a:hover,
+	a:focus {
+		color: var(--clr-light-gray-500);
+	}
 
-.main-layout {
-	min-height: 100vh;
-	line-height: 1.5;
-	display: grid;
-	grid-template-rows: auto 1fr auto;
+	.main-layout {
+		min-height: 100vh;
+		max-width: 100%;
+		line-height: 1.5;
+		display: grid;
+		grid-template-rows: auto 1fr auto;
+	}
 }
