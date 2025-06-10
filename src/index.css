@@ -1,158 +1,165 @@
 @layer reset {
-  /* Box sizing rules */
-  *,
-  *::before,
-  *::after {
-    box-sizing: border-box;
-  }
+	/* Box sizing rules */
+	*,
+	*::before,
+	*::after {
+		box-sizing: border-box;
+	}
 
-  /* Prevent font size inflation */
-  html {
-    -moz-text-size-adjust: none;
-    -webkit-text-size-adjust: none;
-    text-size-adjust: none;
-  }
+	/* Prevent font size inflation */
+	html {
+		-moz-text-size-adjust: none;
+		-webkit-text-size-adjust: none;
+		text-size-adjust: none;
+	}
 
-  /* Remove default margin in favour of better control in authored CSS */
-  body,
-  h1,
-  h2,
-  h3,
-  h4,
-  p,
-  figure,
-  blockquote,
-  dl,
-  dd {
-    margin-block-end: 0;
-  }
+	/* Remove default margin in favour of better control in authored CSS */
+	body,
+	h1,
+	h2,
+	h3,
+	h4,
+	p,
+	figure,
+	blockquote,
+	dl,
+	dd {
+		margin-block-end: 0;
+	}
 
-  /* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
-  ul,
-  ol {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-  }
+	/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+	ul,
+	ol {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+	}
 
-  /* Set core body defaults */
-  body {
-    min-height: 100vh;
-    line-height: 1.5;
-  }
+	/* Set core body defaults */
+	body {
+		min-height: 100vh;
+		line-height: 1.5;
+	}
 
-  /* Set shorter line heights on headings and interactive elements */
-  h1,
-  h2,
-  h3,
-  h4,
-  button,
-  input,
-  label {
-    line-height: 1.1;
-  }
+	/* Set shorter line heights on headings and interactive elements */
+	h1,
+	h2,
+	h3,
+	h4,
+	button,
+	input,
+	label {
+		line-height: 1.1;
+	}
 
-  /* Balance text wrapping on headings */
-  h1,
-  h2,
-  h3,
-  h4 {
-    text-wrap: balance;
-  }
+	/* Balance text wrapping on headings */
+	h1,
+	h2,
+	h3,
+	h4 {
+		text-wrap: balance;
+	}
 
-  /* A elements that don't have a class get default styles */
-  a:not([class]) {
-    text-decoration-skip-ink: auto;
-    color: currentColor;
-  }
+	/* A elements that don't have a class get default styles */
+	a:not([class]) {
+		text-decoration-skip-ink: auto;
+		color: currentColor;
+	}
 
-  /* Make images easier to work with */
-  img,
-  picture {
-    max-width: 100%;
-    display: block;
-  }
+	/* Make images easier to work with */
+	img,
+	picture {
+		max-width: 100%;
+		display: block;
+	}
 
-  /* Inherit fonts for inputs and buttons */
-  input,
-  button,
-  textarea,
-  select {
-    font-family: inherit;
-    font-size: inherit;
-  }
+	/* Inherit fonts for inputs and buttons */
+	input,
+	button,
+	textarea,
+	select {
+		font-family: inherit;
+		font-size: inherit;
+	}
 
-  /* Make sure textareas without a rows attribute are not tiny */
-  textarea:not([rows]) {
-    min-height: 10em;
-  }
+	/* Make sure textareas without a rows attribute are not tiny */
+	textarea:not([rows]) {
+		min-height: 10em;
+	}
 
-  /* Anything that has been anchored to should have extra scroll margin */
-  :target {
-    scroll-margin-block: 5ex;
-  }
+	/* Anything that has been anchored to should have extra scroll margin */
+	:target {
+		scroll-margin-block: 5ex;
+	}
 }
 
 @layer base {
-  :root {
-    --clr-primary: #000000;
-    --clr-secondary: #080b13;
-    --clr-gray: #3c3737;
-    --clr-beige: #f4e1cc;
-    --clr-border: #262626;
-    --clr-indigo: #9faed9;
-    --clr-bolotny: #56aa91;
-    --clr-light-gray-500: #707070;
-    --clr-brown: #743821;
-    --clr-ochre: #c89607;
-    --clr-dark-green: #214133;
-    --clr-white: #ffffff;
-    --clr-red: #ff4b41;
-    --clr-light-green: #00ab26;
-    --clr-light-gray-400: #f1f1ef;
+	:root {
+		--clr-primary: #000000;
+		--clr-secondary: #080b13;
+		--clr-gray: #3c3737;
+		--clr-beige: #f4e1cc;
+		--clr-border: #262626;
+		--clr-indigo: #9faed9;
+		--clr-bolotny: #56aa91;
+		--clr-light-gray-500: #707070;
+		--clr-brown: #743821;
+		--clr-ochre: #c89607;
+		--clr-dark-green: #214133;
+		--clr-white: #ffffff;
+		--clr-red: #ff4b41;
+		--clr-light-green: #00ab26;
+		--clr-light-gray-400: #f1f1ef;
 
-    --fs-300: 0.875rem;
-    --fs-400: 1rem;
-    --fs-500: 1.125rem;
-    --fs-600: 1.25rem;
-    --fs-700: 1.5rem;
-    --fs-800: 2rem;
-    --fs-900: 3.75rem;
-    --fs-1000: 3.75rem;
+		--fs-300: 0.875rem;
+		--fs-400: 1rem;
+		--fs-500: 1.125rem;
+		--fs-600: 1.25rem;
+		--fs-700: 1.5rem;
+		--fs-800: 2rem;
+		--fs-900: 3.75rem;
+		--fs-1000: 3.75rem;
 
-    @media (width > 760px) {
-      --fs-300: 0.875rem;
-      --fs-400: 1rem;
-      --fs-500: 1.25rem;
-      --fs-600: 1.5rem;
-      --fs-700: 2rem;
-      --fs-800: 3rem;
-      --fs-900: 5rem;
-      --fs-1000: 7.5rem;
-    }
-  }
+		@media (width > 760px) {
+			--fs-300: 0.875rem;
+			--fs-400: 1rem;
+			--fs-500: 1.25rem;
+			--fs-600: 1.5rem;
+			--fs-700: 2rem;
+			--fs-800: 3rem;
+			--fs-900: 5rem;
+			--fs-1000: 7.5rem;
+		}
+	}
 
-  html {
-    font-family: "Basis Grotesque Pro";
-  }
+	html {
+		font-family: 'Basis Grotesque Pro';
+	}
 
-  body {
-    color: var(--clr-secondary);
-  }
+	body {
+		color: var(--clr-secondary);
+	}
 }
 
 * {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
-  text-decoration: none;
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+	text-decoration: none;
 }
 
 a {
-  color: inherit;
+	color: inherit;
 }
 
 a:hover,
 a:focus {
-  color: var(--clr-light-gray-500);
+	color: var(--clr-light-gray-500);
+}
+
+.main-layout {
+	min-height: 100vh;
+	line-height: 1.5;
+	display: grid;
+	grid-template-rows: auto 1fr auto;
 }
