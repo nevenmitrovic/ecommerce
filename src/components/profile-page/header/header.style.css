@@ -1,0 +1,11 @@
+.profile-page-header {
+	width: 100%;
+	font-size: 13px;
+	padding: 12px 20px;
+}
+
+@media (width > 768px) {
+	.profile-page-header {
+		padding: 4px 60px;
+	}
+}

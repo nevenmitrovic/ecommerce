@@ -53,8 +53,8 @@ const Navbar = () => {
 							</NavLink>
 						</li>
 						<li>
-							<NavLink to='#' onClick={navigateAndToggle('#')}>
-								LOGIN
+							<NavLink to='/profile' onClick={navigateAndToggle('/profile')}>
+								PROFILE
 							</NavLink>
 						</li>
 					</ul>

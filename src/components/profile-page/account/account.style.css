@@ -1,0 +1,34 @@
+.account-container {
+	padding: 40px 20px;
+}
+.account-container h3 {
+	font-size: 20px;
+	font-weight: 500;
+	margin-bottom: 40px;
+}
+.bonus-card {
+	max-width: 100%;
+	max-height: 200px;
+	background-color: var(--clr-light-gray-400);
+	margin: 0 auto 20px auto;
+}
+.bonus-card > img {
+	max-width: 100%;
+	max-height: 131px;
+}
+.bonus-info {
+	padding-inline: 20px;
+}
+.bonus-info > p {
+	display: flex;
+	justify-content: space-between;
+}
+.bonus-info > p:last-child {
+	color: var(--clr-light-gray-500);
+}
+
+@media (width > 768px) {
+	.account-container {
+		padding: 80px 60px;
+	}
+}
