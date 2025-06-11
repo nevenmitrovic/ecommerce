@@ -15,7 +15,7 @@ const Account = () => {
 		<div className='account-container'>
 			{userData ? (
 				<div className='profile-container'>
-					<h3>Hello {userData.name}</h3>
+					<h3>Hello, {userData.name}!</h3>
 					<div className='bonus-card'>
 						<img src={fableImg} alt='fable store image' />
 						<div className='bonus-info'>

@@ -22,6 +22,7 @@
 .bonus-info > p {
 	display: flex;
 	justify-content: space-between;
+	padding-inline: 12px;
 }
 .bonus-info > p:last-child {
 	color: var(--clr-light-gray-500);
@@ -30,5 +31,13 @@
 @media (width > 768px) {
 	.account-container {
 		padding: 80px 60px;
+	}
+	.bonus-card {
+		max-width: 335px;
+		max-height: 242px;
+		margin: 0 0 36px 0;
+	}
+	.profile-container > button {
+		max-width: 232px;
 	}
 }
