@@ -23,7 +23,7 @@ const NotFound = () => {
 					<Link to='/' className='home-link'>
 						<Button text='Go Home' classNam='main-button' type='button' />
 					</Link>
-					<Button text='Go Back' classNam='order-button' type='button' onClick={handleGoBack} />
+					<Button text='Go Back' classNam='main-button' type='button' onClick={handleGoBack} />
 				</div>
 			</div>
 		</div>
