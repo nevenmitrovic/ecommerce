@@ -29,6 +29,7 @@ const Subscribe = () => {
 			await new Promise((resolve) => setTimeout(resolve, 300))
 			toast.success(`${data.email} subscribed successfully`, { id: loadingToast })
 		} catch (error) {
+			console.log(error)
 			toast.error(`Something went wrong`, { id: loadingToast })
 		}
 	})
