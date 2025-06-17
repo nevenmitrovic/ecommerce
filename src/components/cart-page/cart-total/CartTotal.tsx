@@ -22,7 +22,7 @@ const CartTotal = () => {
 					</p>
 					<p>
 						Subscribe:
-						<span>{userData ? getSubscribeDiscount(userData.email).toFixed(2) : 0}$</span>
+						<span>{userData ? getSubscribeDiscount(userData.email).toFixed(2) : '0.00'}$</span>
 					</p>
 					<p>
 						Delivery: <span>0.00$</span>
