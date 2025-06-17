@@ -171,4 +171,9 @@
 		display: grid;
 		grid-template-rows: auto 1fr auto;
 	}
+
+	.error-message {
+		color: var(--clr-red);
+		font-size: var(--fs-300);
+	}
 }
