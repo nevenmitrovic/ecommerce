@@ -1,15 +1,16 @@
-import { GoogleLogin } from '@react-oauth/google';
-import { useContext } from 'react';
+import { GoogleLogin } from '@react-oauth/google'
+import { useContext } from 'react'
 
-import { UserContext } from '@/stores/contexts/UserContext';
+import { UserContext } from '@/stores/contexts/UserContext'
 
-import Button from '@/components/common/buttons/Button';
+import Button from '@/components/common/buttons/Button'
 
-import './account.style.css';
-import fableImg from '@/assets/images/fable-store.png';
+import './account.style.css'
+import fableImg from '@/assets/images/fable-store.png'
+import accountDesktopImg from '@/assets/images/sign-in.jpg'
 
 const Account = () => {
-	const { userData, handleUserData, handleLogout } = useContext(UserContext);
+	const { userData, handleUserData, handleLogout } = useContext(UserContext)
 
 	return (
 		<div className='account-container'>
@@ -44,8 +45,11 @@ const Account = () => {
 					/>
 				</div>
 			)}
+			<div className='sign-in-photo'>
+				<img src={accountDesktopImg} alt='account image for large size devices' />
+			</div>
 		</div>
-	);
-};
+	)
+}
 
-export default Account;
+export default Account

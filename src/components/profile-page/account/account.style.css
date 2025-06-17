@@ -27,10 +27,15 @@
 .bonus-info > p:last-child {
 	color: var(--clr-light-gray-500);
 }
+.sign-in-photo {
+	display: none;
+}
 
 @media (width > 768px) {
 	.account-container {
 		padding: 80px 60px;
+		display: flex;
+		gap: 20px;
 	}
 	.bonus-card {
 		max-width: 335px;
@@ -39,5 +44,17 @@
 	}
 	.profile-container > button {
 		max-width: 232px;
+	}
+	.profile-container,
+	.sign-in-form {
+		width: 598px;
+	}
+	.sign-in-photo {
+		display: block;
+		width: 100%;
+	}
+	.sign-in-photo > img {
+		height: 712px;
+		width: 100%;
 	}
 }
