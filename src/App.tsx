@@ -10,6 +10,7 @@ import Product from '@/pages/Product'
 import Cart from '@/pages/Cart'
 import Profile from '@/pages/Profile'
 import About from '@/pages/About'
+import NotFound from '@/pages/NotFound'
 
 function App() {
 	return (
@@ -29,6 +30,7 @@ function App() {
 					<Route path='/cart' element={<Cart />} />
 					<Route path='/profile' element={<Profile />} />
 					<Route path='/about' element={<About />} />
+					<Route path='*' element={<NotFound />} />
 				</Routes>
 			</CartContextProvider>
 		</UserContextProvider>
