@@ -1,6 +1,6 @@
-import Navbar from '@/components/common/navbar/Navbar';
-import Footer from '@/components/common/footer/Footer';
-import { ToastContainer } from 'react-toastify';
+import Navbar from '@/components/common/navbar/Navbar'
+import Footer from '@/components/common/footer/Footer'
+import { Toaster } from 'sonner'
 
 const MainLayout = ({ children }: any) => {
 	return (
@@ -8,8 +8,8 @@ const MainLayout = ({ children }: any) => {
 			<Navbar />
 			<main>{children}</main>
 			<Footer />
-			<ToastContainer />
+			<Toaster richColors={true} position='bottom-right' closeButton={true} />
 		</div>
-	);
-};
-export default MainLayout;
+	)
+}
+export default MainLayout
