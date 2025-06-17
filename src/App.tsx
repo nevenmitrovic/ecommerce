@@ -1,14 +1,15 @@
-import { Route, Routes } from 'react-router';
+import { Route, Routes } from 'react-router'
 
-import { SortContextProvider } from '@/stores/contexts/SortContext';
-import { CartContextProvider } from '@/stores/contexts/CartContext';
-import { UserContextProvider } from './stores/contexts/UserContext';
+import { SortContextProvider } from '@/stores/contexts/SortContext'
+import { CartContextProvider } from '@/stores/contexts/CartContext'
+import { UserContextProvider } from './stores/contexts/UserContext'
 
-import Home from '@/pages/Home';
-import Catalog from '@/pages/Catalog';
-import Product from '@/pages/Product';
-import Cart from '@/pages/Cart';
-import Profile from '@/pages/Profile';
+import Home from '@/pages/Home'
+import Catalog from '@/pages/Catalog'
+import Product from '@/pages/Product'
+import Cart from '@/pages/Cart'
+import Profile from '@/pages/Profile'
+import About from '@/pages/About'
 
 function App() {
 	return (
@@ -27,10 +28,11 @@ function App() {
 					<Route path='/product/:id' element={<Product />} />
 					<Route path='/cart' element={<Cart />} />
 					<Route path='/profile' element={<Profile />} />
+					<Route path='/about' element={<About />} />
 				</Routes>
 			</CartContextProvider>
 		</UserContextProvider>
-	);
+	)
 }
 
-export default App;
+export default App

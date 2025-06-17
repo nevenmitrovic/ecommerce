@@ -1,26 +1,26 @@
-import './navbar.style.css';
+import './navbar.style.css'
 
-import { NavLink, useNavigate } from 'react-router';
-import { useCallback, useState, useContext } from 'react';
+import { NavLink, useNavigate } from 'react-router'
+import { useCallback, useState, useContext } from 'react'
 
-import Catalog from '@/components/common/navbar/catalog-navbar/Catalog';
-import { CartContext } from '@/stores/contexts/CartContext';
+import Catalog from '@/components/common/navbar/catalog-navbar/Catalog'
+import { CartContext } from '@/stores/contexts/CartContext'
 
 const Navbar = () => {
-	const [showCatalog, setShowCatalog] = useState(false);
+	const [showCatalog, setShowCatalog] = useState(false)
 
-	const navigate = useNavigate();
-	const { getTotalItems } = useContext(CartContext);
+	const navigate = useNavigate()
+	const { getTotalItems } = useContext(CartContext)
 
-	const toggleShowCatalog = () => setShowCatalog(!showCatalog);
+	const toggleShowCatalog = () => setShowCatalog(!showCatalog)
 	const navigateAndToggle = useCallback(
 		(path: string) => (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
-			e.preventDefault();
-			navigate(path);
-			if (showCatalog) toggleShowCatalog();
+			e.preventDefault()
+			navigate(path)
+			if (showCatalog) toggleShowCatalog()
 		},
-		[showCatalog],
-	);
+		[showCatalog]
+	)
 
 	return (
 		<header>
@@ -34,13 +34,8 @@ const Navbar = () => {
 					<ul className='navbar-list'>
 						<li onClick={toggleShowCatalog}>CATALOG</li>
 						<li className='mobile-hidden'>
-							<NavLink to='#' onClick={navigateAndToggle('#')}>
+							<NavLink to='/about' onClick={navigateAndToggle('/about')}>
 								ABOUT US
-							</NavLink>
-						</li>
-						<li className='mobile-hidden'>
-							<NavLink to='#' onClick={navigateAndToggle('#')}>
-								CONTACT
 							</NavLink>
 						</li>
 					</ul>
@@ -63,6 +58,6 @@ const Navbar = () => {
 
 			<Catalog show={showCatalog} toggleCatalog={navigateAndToggle} />
 		</header>
-	);
-};
-export default Navbar;
+	)
+}
+export default Navbar
