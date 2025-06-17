@@ -1,14 +1,16 @@
-import { useContext } from 'react';
+import { useContext } from 'react'
 
-import { CartContext } from '@/stores/contexts/CartContext';
+import { CartContext } from '@/stores/contexts/CartContext'
+import { UserContext } from '@/stores/contexts/UserContext'
 
-import Input from '@/components/common/input/Input';
-import Button from '@/components/common/buttons/Button';
+import Input from '@/components/common/input/Input'
+import Button from '@/components/common/buttons/Button'
 
-import './cart-total.style.css';
+import './cart-total.style.css'
 
 const CartTotal = () => {
-	const { getTotalPrice } = useContext(CartContext);
+	const { getTotalPrice, getSubscribeDiscount } = useContext(CartContext)
+	const { userData } = useContext(UserContext)
 
 	return (
 		<div className='cart-total'>
@@ -19,13 +21,23 @@ const CartTotal = () => {
 						Summary: <span>{getTotalPrice().toFixed(2)}$</span>
 					</p>
 					<p>
-						Delivery: <span>0$</span>
+						Subscribe:
+						<span>{userData ? getSubscribeDiscount(userData.email).toFixed(2) : 0}$</span>
 					</p>
 					<p>
-						Promocode: <span>0$</span>
+						Delivery: <span>0.00$</span>
+					</p>
+					<p>
+						Promocode: <span>0.00$</span>
 					</p>
 				</div>
-				<div className='total'>Total: {getTotalPrice().toFixed(2)}$</div>
+				<div className='total'>
+					Total:{' '}
+					{userData
+						? (getTotalPrice() - getSubscribeDiscount(userData.email)).toFixed(2)
+						: getTotalPrice().toFixed(2)}
+					$
+				</div>
 				<div className='input-promocode'>
 					<Input
 						type='text'
@@ -41,7 +53,7 @@ const CartTotal = () => {
 				</div>
 			</div>
 		</div>
-	);
-};
+	)
+}
 
-export default CartTotal;
+export default CartTotal

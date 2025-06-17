@@ -4,12 +4,17 @@ import { joiResolver } from '@hookform/resolvers/joi'
 
 import { subscribeSchema } from '@/validations/index'
 
+import { loadSubscribersFromStorage, setNewSubscriber } from '@/helpers/globalHelpers'
+
 import Input from '@/components/common/input/Input'
 import Button from '@/components/common/buttons/Button'
 
 import './subscribe.style.css'
 
 interface ISubscribeForm {
+	email: string
+}
+export interface ISubscriber {
 	email: string
 }
 
@@ -24,13 +29,19 @@ const Subscribe = () => {
 
 	const mockHandleSubscribe = handleSubmit(async (data) => {
 		const loadingToast = toast.loading('Loading...')
+		const subscribers = loadSubscribersFromStorage()
 
 		try {
-			await new Promise((resolve) => setTimeout(resolve, 300))
+			await new Promise((resolve) => {
+				setTimeout(() => {
+					resolve(setNewSubscriber(subscribers, data))
+				}, 700)
+			})
+
 			toast.success(`${data.email} subscribed successfully`, { id: loadingToast })
 		} catch (error) {
 			console.log(error)
-			toast.error(`Something went wrong`, { id: loadingToast })
+			toast.error(`${error}`, { id: loadingToast })
 		}
 	})
 
