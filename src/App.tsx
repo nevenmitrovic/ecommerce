@@ -30,7 +30,7 @@ function App() {
 					<Route path='/cart' element={<Cart />} />
 					<Route path='/profile' element={<Profile />} />
 					<Route path='/about' element={<About />} />
-					<Route path='*' element={<NotFound />} />
+					<Route path='/*' element={<NotFound />} />
 				</Routes>
 			</CartContextProvider>
 		</UserContextProvider>
