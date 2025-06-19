@@ -17,14 +17,18 @@ export function loadSubscribersFromStorage(): ISubscriber[] {
 
 export function setNewSubscriber(existingSubscribers: ISubscriber[], data: ISubscriber): void {
 	if (existingSubscribers.length === 0) {
-		const newSubscribers: ISubscriber[] = [{ email: data.email }]
+		const newSubscribers: ISubscriber[] = [{ email: data.email.trim().toLowerCase() }]
 		localStorage.setItem('subscribers', JSON.stringify(newSubscribers))
 	} else {
-		if (existingSubscribers.find((subscriber) => subscriber.email === data.email)) {
+		if (
+			existingSubscribers.find(
+				(subscriber) => subscriber.email === data.email.trim().toLocaleLowerCase()
+			)
+		) {
 			throw Error('You are already subscribed')
 		}
 
-		existingSubscribers.push({ email: data.email })
+		existingSubscribers.push({ email: data.email.trim().toLocaleLowerCase() })
 		localStorage.setItem('subscribers', JSON.stringify(existingSubscribers))
 	}
 }

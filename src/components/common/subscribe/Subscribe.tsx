@@ -22,6 +22,7 @@ const Subscribe = () => {
 	const {
 		handleSubmit,
 		register,
+		reset,
 		formState: { errors },
 	} = useForm<ISubscribeForm>({
 		resolver: joiResolver(subscribeSchema),
@@ -39,6 +40,7 @@ const Subscribe = () => {
 			})
 
 			toast.success(`${data.email} subscribed successfully`, { id: loadingToast })
+			reset()
 		} catch (error) {
 			console.log(error)
 			toast.error(`${error}`, { id: loadingToast })

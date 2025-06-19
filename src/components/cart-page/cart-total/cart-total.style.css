@@ -24,6 +24,11 @@
 	gap: 16px;
 	align-items: center;
 	padding: 12px 20px;
+	margin-bottom: 12px;
+}
+.place-order {
+	width: 100%;
+	padding: 12px 20px;
 }
 
 @media (width > 768px) {
@@ -46,6 +51,10 @@
 	.input-promocode {
 		width: 100%;
 		flex-direction: row;
+		padding: 0;
+	}
+	.place-order {
+		max-width: 228px;
 		padding: 0;
 	}
 }
