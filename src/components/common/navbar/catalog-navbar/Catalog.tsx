@@ -35,7 +35,7 @@ const Catalog = ({ show, toggleCatalog }: CatalogProps) => {
 	}, [])
 
 	return (
-		<div className='catalog-container' style={{ display: show ? 'flex' : 'none' }}>
+		<div className={`catalog-container ${show ? 'catalog-enter' : 'catalog-leave'}`}>
 			{loading ? (
 				<Spinner />
 			) : (

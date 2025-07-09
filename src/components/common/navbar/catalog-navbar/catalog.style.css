@@ -1,63 +1,74 @@
 .catalog-container {
-  width: 100vw;
-  height: 100vh;
-  position: absolute;
-  z-index: 1000;
-  background-color: var(--clr-white);
-  gap: 38px;
+	width: 100vw;
+	display: flex;
+	position: absolute;
+	z-index: 1000;
+	background-color: var(--clr-white);
+	gap: 38px;
+	transition: height 300ms ease;
+	overflow: hidden;
+}
+.catalog-enter {
+	height: 100vh;
+	visibility: visible;
+}
+.catalog-leave {
+	height: 0vh;
 }
 .catalog-section {
-  padding: 20px;
-  overflow-y: auto;
+	padding: 20px;
+	overflow-y: auto;
 }
 .catalog-section h3 {
-  font-size: 20px;
-  font-weight: 700;
-  margin-bottom: 20px;
+	font-size: 20px;
+	font-weight: 700;
+	margin-bottom: 20px;
 }
 .catalog-section ul {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
+	display: flex;
+	flex-direction: column;
+	gap: 8px;
 }
 
 .catalog-section::-webkit-scrollbar {
-  width: 6px;
+	width: 6px;
 }
 .catalog-section::-webkit-scrollbar-thumb {
-  background-color: transparent;
-  border-radius: 3px;
+	background-color: transparent;
+	border-radius: 3px;
 }
 .catalog-section:hover::-webkit-scrollbar-thumb {
-  background-color: rgba(0, 0, 0, 0.2);
+	background-color: rgba(0, 0, 0, 0.2);
 }
 
 @media (width > 768px) {
-  .catalog-container {
-    height: 80vh;
-    width: 100%;
-    background-color: var(--clr-white);
-    gap: 20px;
-    padding: 84px 10% 0 10%;
-    justify-content: space-evenly;
-    overflow-x: hidden;
-  }
-  .catalog-section {
-    padding: 0;
-  }
-  .catalog-section h3 {
-    font-size: 13px;
-    font-weight: 500;
-    margin-bottom: 56px;
-    color: var(--clr-light-gray-500);
-  }
-  .catalog-section ul {
-    font-size: 20px;
-    padding-bottom: 8px;
-  }
-  .catalog-section ul li:hover {
-    cursor: pointer;
-    font-weight: 700;
-    color: var(--clr-light-gray-500);
-  }
+	.catalog-container {
+		width: 100%;
+		background-color: var(--clr-white);
+		gap: 20px;
+		padding: 84px 10% 0 10%;
+		justify-content: space-evenly;
+		overflow-x: hidden;
+	}
+	.catalog-enter {
+		height: 80vh;
+	}
+	.catalog-section {
+		padding: 0;
+	}
+	.catalog-section h3 {
+		font-size: 13px;
+		font-weight: 500;
+		margin-bottom: 56px;
+		color: var(--clr-light-gray-500);
+	}
+	.catalog-section ul {
+		font-size: 20px;
+		padding-bottom: 8px;
+	}
+	.catalog-section ul li:hover {
+		cursor: pointer;
+		font-weight: 700;
+		color: var(--clr-light-gray-500);
+	}
 }
