@@ -7,7 +7,32 @@
 	max-height: 251px;
 	text-align: center;
 	cursor: pointer;
+	position: relative;
+	transition: opacity 0.3s ease;
 }
+
+.product-card.out-of-stock {
+	opacity: 0.6;
+}
+
+.product-card.out-of-stock > img {
+	filter: grayscale(100%);
+}
+
+.out-of-stock-badge {
+	position: absolute;
+	top: 10px;
+	right: 10px;
+	background-color: var(--clr-error, #e74c3c);
+	color: white;
+	padding: 4px 8px;
+	font-size: 8px;
+	font-weight: bold;
+	border-radius: 4px;
+	text-transform: uppercase;
+	z-index: 10;
+}
+
 .product-card > img {
 	width: 157px;
 	height: 156px;
@@ -44,5 +69,12 @@
 	}
 	.product-regular-price {
 		font-size: 24px;
+	}
+
+	.out-of-stock-badge {
+		top: 15px;
+		right: 15px;
+		padding: 6px 12px;
+		font-size: 12px;
 	}
 }

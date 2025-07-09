@@ -1,43 +1,80 @@
 .button {
-  width: 100%;
-  padding: 12px 24px;
-  font-size: 20px;
-  text-align: center;
-  cursor: pointer;
+	width: 100%;
+	padding: 12px 24px;
+	font-size: 20px;
+	text-align: center;
+	cursor: pointer;
+	transition: all 0.3s ease;
+}
+
+.button:disabled {
+	opacity: 0.6;
+	pointer-events: none;
+}
+
+.main-button:disabled {
+	background-color: var(--clr-light-gray, #f5f5f5);
+	color: var(--clr-gray-text, #999);
+	border: 1px solid var(--clr-gray-border, #ddd);
+}
+
+.order-button:disabled {
+	background-color: var(--clr-disabled-gray, #ccc);
+	color: var(--clr-disabled-text, #999);
+	border: none;
+}
+
+.button:disabled:hover,
+.button:disabled:focus {
+	transform: none;
+}
+
+.main-button:disabled:hover,
+.main-button:disabled:focus {
+	background-color: var(--clr-light-gray, #f5f5f5);
+	color: var(--clr-gray-text, #999);
+	border: 1px solid var(--clr-gray-border, #ddd);
+}
+
+.order-button:disabled:hover,
+.order-button:disabled:focus {
+	background-color: var(--clr-disabled-gray, #ccc);
+	color: var(--clr-disabled-text, #999);
+	border: none;
 }
 
 .main-button {
-  background-color: var(--clr-white);
-  color: var(--clr-secondary);
-  border: 1px solid var(--clr-secondary);
+	background-color: var(--clr-white);
+	color: var(--clr-secondary);
+	border: 1px solid var(--clr-secondary);
 }
 
 .order-button {
-  background-color: var(--clr-gray);
-  color: var(--clr-white);
-  border: none;
+	background-color: var(--clr-gray);
+	color: var(--clr-white);
+	border: none;
 }
 
 .order-button:hover,
 .order-button:focus {
-  background-color: var(--clr-white);
-  color: var(--clr-secondary);
-  border: 1px solid var(--clr-secondary);
+	background-color: var(--clr-white);
+	color: var(--clr-secondary);
+	border: 1px solid var(--clr-secondary);
 }
 
 .main-button:hover,
 .main-button:focus {
-  background-color: var(--clr-secondary);
-  color: var(--clr-white);
-  border: 1px solid var(--clr-white);
+	background-color: var(--clr-secondary);
+	color: var(--clr-white);
+	border: 1px solid var(--clr-white);
 }
 
 @media (width > 768px) {
-  .button {
-    max-width: 315px;
-    padding: 12px 24px;
-    font-size: 20px;
-    text-align: center;
-    cursor: pointer;
-  }
+	.button {
+		max-width: 315px;
+		padding: 12px 24px;
+		font-size: 20px;
+		text-align: center;
+		cursor: pointer;
+	}
 }

@@ -25,6 +25,7 @@ const ProductsContainer = ({ data }: ProductsContainerProps) => {
 							title={product.name}
 							sale_price={product.sale_price}
 							regular_price={product.regular_price}
+							in_stock={product.in_stock}
 						/>
 					)
 				})}
